@@ -23,7 +23,6 @@
     if (!self.screenRecorder.isRecording) {
     [self startRecording];
     [self performSelector:@selector(playRecordingStarted) withObject:nil afterDelay:0.5];
-
      if (@available(tvOS 14.0, *)) {
             [buttonController setSymbolTintColor:[UIColor redColor]];
             [buttonController setToggledOn:true];
@@ -41,24 +40,22 @@
 }
 
 
-
-
 -(void)setupImageBasedOnToggleStatus {
 
     packageFile = [[self bundle] pathForResource:@"Record" ofType:@"png"];
     theImage = [[UIImage imageWithContentsOfFile:packageFile] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [buttonController setImage:theImage];
-
-    defaultColor = [UIColor blackColor];
-    if (@available(tvOS 14.0, *)) {
-        defaultColor = [UIColor blackColor];
+    if([[RPScreenRecorder sharedRecorder] isRecording]) {
+        if (@available(tvOS 14.0, *)) {
+            [buttonController setSymbolTintColor:[UIColor redColor]];
+            [buttonController setToggledOn:true];
+        }
     } else {
-        if ([self darkMode]){
-            defaultColor = [UIColor whiteColor];
+        if (@available(tvOS 14.0, *)) {
+            [buttonController setSymbolTintColor:nil];
+            [buttonController setToggledOn:false];
         }
     }
-
-
 }
 
 

@@ -1,3 +1,4 @@
+#import <UIKit/UIKit.h>
 #import <TVSystemMenuUI/TVSMModuleContentViewControllerDelegate.h>
 #import <TVSystemMenuUI/TVSMModuleContentViewController.h>
 #import <TVSystemMenuUI/TVSMActionModule.h>
