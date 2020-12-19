@@ -1,0 +1,10 @@
+Package: com.ikilledappl3.recordmodule
+Name: Screen Record Module
+Depends: mobilesubstrate, com.nito.tvcontrolcenter (>= 1.1), com.nito.breezy (>= 2.5.2-1), com.nito.bulletinh4x, firmware (>=13.0)
+Version: 1.0.1-1
+Architecture: appletvos-arm64
+Description: Record your tvOS screen with ease.
+Depiction: https://toxicappl3inc.github.io/tvrepo/depictions/ScreenRecordModule/ScreenRecordModule.json
+Maintainer: iKilledAppl3 <ipodnewbee234@icloud.com>
+Author: iKilledAppl3 <ipodnewbee234@icloud.com>
+Section: Tweaks
