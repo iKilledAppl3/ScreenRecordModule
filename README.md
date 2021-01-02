@@ -1,8 +1,10 @@
 # Screen Record Module (Project Addilynne Screen Recorder)
 A screen record module (widget) for tvOS. QuickTime who? 
 A project that's been one year in the making! Feel free to take a look at the code.
-Yes it needs some TLC but it works (on tvOS 14 only for now).
 Originally Called "Addilynne Record Module" (named after my niece)
+
+
+# Supports tvOS 14+
 
 # God is Good All The Time and All the time God is good.
 "Blessed are the peacemakers: for they shall be called the children of God." - Matthew 5:9 KJV

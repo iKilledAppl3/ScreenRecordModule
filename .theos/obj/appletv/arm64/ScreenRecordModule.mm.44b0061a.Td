@@ -1,4 +1,4 @@
-/Users/ikilledappl3/tweaks/tvostweaks/screenrecordmodule/.theos/obj/appletv/arm64/ScreenRecordModule.mm.7cb0dacf.o: \
+/Users/ikilledappl3/tweaks/tvOSTweaks/ScreenRecordModule/.theos/obj/appletv/arm64/ScreenRecordModule.mm.44b0061a.o: \
   ScreenRecordModule.mm /Users/ikilledappl3/theos/Prefix.pch \
   /Users/ikilledappl3/theos/vendor/include/_Prefix/BackwardsCompat.h \
   /Users/ikilledappl3/theos/vendor/include/HBLog.h \
