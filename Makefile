@@ -1,4 +1,5 @@
 ARCHS = arm64
+export GO_EASY_ON_ME=1
 TARGET = appletv:clang:12.4
 FINALPACKAGE = 1
 SYSROOT = $(THEOS)/sdks/AppleTVOS12.4.sdk

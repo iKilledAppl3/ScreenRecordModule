@@ -23,9 +23,12 @@ NSString *videoPath;
 @property (nonatomic,retain) UIWindow * windowToRecord;  
 @property (assign,nonatomic) BOOL systemRecording;  
 -(void)setWindowToRecord:(UIWindow *)windowToRecord;
--(void)startSystemRecordingWithMicrophoneEnabled:(BOOL)arg1 handler:(/*^block*/id)arg2;
+-(void)startSystemRecordingWithMicrophoneEnabled:(BOOL)arg1 handler:(void(^)(NSError * error))handler;
 -(void)stopSystemRecording:(/*^block*/id)arg1;
+-(void)stopRecordingWithVideoURLHandler:(void(^)(id videoURL, NSError *error))arg1;
+-(void)stopRecordingWithOutputURL:(id)arg1 completionHandler:(void(^)(NSError * error))arg2;
 -(NSURL *)broadcastURL;
+-(void)stopSystemRecordingWithURLHandler:(void(^)(id videoURL, NSError *error))handler ;
 @end
 
 
@@ -78,5 +81,5 @@ NSString *videoPath;
 -(void)showAlertToUser;
 -(void)startRecording;
 -(void)stopRecording;
--(void)airdropVideo;
+-(void)airdropVideo:(NSString *)path;
 @end
