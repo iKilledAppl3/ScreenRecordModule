@@ -73,18 +73,18 @@
 }
 
 -(void)stopRecording {
-    NSLog(@"[ScreenRecordModule] stopRecording");
-    //[self.screenRecorder stopSystemRecording:(/*^block*/id)nil];
     [self.screenRecorder stopSystemRecordingWithURLHandler:^(id videoURL, NSError *error) {
         videoPath = [videoURL path];
-        NSLog(@"[ScreenRecordModule] stopSystemRecordingWithURLHandler: %@", videoPath);
         dispatch_async(dispatch_get_main_queue(), ^{
+        	// save the video then airdrop it!
+        	UISaveVideoAtPathToSavedPhotosAlbum(videoPath, nil, nil, nil);
             [self airdropVideo:[videoURL path]];
         });
         
     }];
     // dismiss the cc after 1 second has past.
     [self dismissControlCenterAfterRecording];
+    [self playRecordingStopped];
     
     if (@available(tvOS 14.0, *)) {
         [buttonController setSymbolTintColor:defaultColor];
@@ -101,18 +101,10 @@
 
 
 -(void)airdropVideo:(NSString *)path {
-    NSLog(@"[ScreenRecordModule] airdropVideo: %@", path);
-    // screen recordings save to this directory by default.
-    //videoPath = [NSString stringWithFormat:@"/var/mobile/Media/DCIM/100APPLE/"];
-    
-    // here we are initializing Breezy and getting ready to AirDrop the screen recording(s)
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"airdropper://%@", [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-    NSLog(@"[ScreenRecordModule] url: %@", url);
+   // here we are initializing Breezy and getting ready to AirDrop the screen recording(s)
+   NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"airdropper://%@", [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     UIApplication *application = [UIApplication sharedApplication];
     [application openURL:url options:@{} completionHandler:nil];
-#pragma clang diagnostic pop
 }
 
 
@@ -155,9 +147,6 @@
     
     
     [[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.nito.bulletinh4x/displayBulletin" object:nil userInfo:dict];
-    
-    //prepare the video for airdrop
-    //[self airdropVideo];
     
 }
 

@@ -12,7 +12,7 @@ ScreenRecordModule_FILES = ScreenRecordModule.mm
 ScreenRecordModule_INSTALL_PATH = /Library/TVSystemMenuModules
 ScreenRecordModule_FRAMEWORKS = UIKit ReplayKit AudioToolbox AVFoundation
 ScreenRecordModule_PRIVATE_FRAMEWORKS = TVSystemMenuUI PineBoardServices
-ScreenRecordModule_CFLAGS = -fobjc-arc  -F. -I.
+ScreenRecordModule_CFLAGS = -fobjc-arc  -F. -I. -Wno-error=deprecated-declarations
 ScreenRecordModule_LIBRARIES = substrate
 ScreenRecordModule_LDFLAGS +=  -F. -I.
 

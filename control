@@ -1,7 +1,7 @@
 Package: com.ikilledappl3.recordmodule
 Name: Screen Record Module
 Depends: mobilesubstrate, com.nito.tvcontrolcenter (>= 1.1), com.nito.breezy (>= 2.5.2-1), com.nito.bulletinh4x, firmware (>=14.0), com.nito.ethereal
-Version: 1.0.2-1
+Version: 1.0.3-1
 Architecture: appletvos-arm64
 Description: Record your tvOS screen with ease.
 Depiction: https://toxicappl3inc.github.io/tvrepo/depictions/ScreenRecordModule/ScreenRecordModule.json
