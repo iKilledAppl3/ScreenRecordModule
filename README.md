@@ -12,7 +12,7 @@ Originally Called "Addilynne Record Module" (named after my niece)
 
 # Get in On iKilledAppl3 LLC.
 
-[Screen Record Module](https://toxicappl3.github.io/tvrepo/) - Download this free tweak!
+[Screen Record Module](https://ikilledappl3.com/tvrepo/) - Download this free tweak!
 
 ## Built With
 
